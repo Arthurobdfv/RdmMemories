@@ -5,18 +5,6 @@ pipeline {
 
     agent any
     stages {
-        stage("Clean Up") {
-            steps {
-                deleteDir()
-            }
-        }
-
-        stage("Clone Repo"){
-            steps {
-                sh "git clone https://github.com/Arthurobdfv/${ProjectName}.git"
-            }
-        }
-
         stage("Build"){   
             steps {
                 dir("${ProjectName}") {
