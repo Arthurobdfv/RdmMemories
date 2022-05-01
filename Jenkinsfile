@@ -11,6 +11,12 @@ pipeline {
             }
         }
 
+        stage("Clone Repo"){
+            steps {
+                sh "git clone https://github.com/Arthurobdfv/${ProjectName}.git"
+            }
+        }
+
         stage("Build"){   
             steps {
                 dir("${ProjectName}") {
