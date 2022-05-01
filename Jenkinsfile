@@ -7,13 +7,11 @@ pipeline {
     stages {
         stage("Build"){   
             steps {
-                dir("${ProjectName}") {
-                    sh """
-                    dotnet restore ${GameBackend}
-                    dotnet build ${GameBackend}
-                    dotnet publish ${GameBackend}/Server --output \"Release/publish\" --configuration \"Release\" --self-contained true /p:GenerateRuntimeConfigurationFiles=true --runtime linux-x64
-                    """
-                }      
+                sh """
+                dotnet restore ${GameBackend}
+                dotnet build ${GameBackend}
+                dotnet publish ${GameBackend}/Server --output \"Release/publish\" --configuration \"Release\" --self-contained true /p:GenerateRuntimeConfigurationFiles=true --runtime linux-x64
+                """                
             }
         }
     }
