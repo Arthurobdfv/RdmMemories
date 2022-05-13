@@ -16,7 +16,9 @@ pipeline {
         }
 
         stage("Testing JK"){
-            echo "Dale!"
+            steps {
+                echo "Dale Again"
+            }
         }
 
         stage("Complete"){
