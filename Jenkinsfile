@@ -15,15 +15,9 @@ pipeline {
             }
         }
 
-        stage("Testing JK"){
-            steps {
-                echo "Dale Again"
-            }
-        }
-
         stage("Complete"){
             steps {
-                echo "Finished!"
+                echo "Finished!" + env.BRANCH_NAME
             }
         }
     }
