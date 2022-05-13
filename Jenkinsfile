@@ -17,7 +17,7 @@ pipeline {
 
         stage("Complete"){
             steps {
-                echo "Finished!"
+                echo "Finished!" + env.BRANCH_NAME
             }
         }
     }
