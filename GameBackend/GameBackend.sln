@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{966BD9C9-3780-42A4-ABD1-D8577FF0FB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{966BD9C9-3780-42A4-ABD1-D8577FF0FB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMemories.SharedLibrary", "RandomMemories.SharedLibrary\RandomMemories.SharedLibrary.csproj", "{EACC3DD2-E9B6-4C67-A87C-D227DC3677EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomMemories.SharedLibrary", "RandomMemories.SharedLibrary\RandomMemories.SharedLibrary.csproj", "{EACC3DD2-E9B6-4C67-A87C-D227DC3677EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMemories.Domain", "RandomMemories.Domain\RandomMemories.Domain.csproj", "{278B9A1E-1466-4919-9D24-9ABEB8066D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomMemories.Domain", "RandomMemories.Domain\RandomMemories.Domain.csproj", "{278B9A1E-1466-4919-9D24-9ABEB8066D74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomMemories.LocalImplementation", "RandomMemories.LocalEnviroment\RandomMemories.LocalImplementation.csproj", "{715F6A02-2E7E-47E7-BEF9-3270EDC646D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomMemories.Contracts", "RandomMemories.Contracts\RandomMemories.Contracts.csproj", "{A575AE30-F41E-4141-94E4-2C56F584D18F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMemories.FactoryImplementation", "RandomMemories.FactoryImplementation\RandomMemories.FactoryImplementation.csproj", "{6608AD10-8219-4F81-9428-7985DAB0592F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{278B9A1E-1466-4919-9D24-9ABEB8066D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{278B9A1E-1466-4919-9D24-9ABEB8066D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{278B9A1E-1466-4919-9D24-9ABEB8066D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715F6A02-2E7E-47E7-BEF9-3270EDC646D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715F6A02-2E7E-47E7-BEF9-3270EDC646D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715F6A02-2E7E-47E7-BEF9-3270EDC646D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715F6A02-2E7E-47E7-BEF9-3270EDC646D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A575AE30-F41E-4141-94E4-2C56F584D18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A575AE30-F41E-4141-94E4-2C56F584D18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A575AE30-F41E-4141-94E4-2C56F584D18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A575AE30-F41E-4141-94E4-2C56F584D18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6608AD10-8219-4F81-9428-7985DAB0592F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6608AD10-8219-4F81-9428-7985DAB0592F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6608AD10-8219-4F81-9428-7985DAB0592F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6608AD10-8219-4F81-9428-7985DAB0592F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RandomMemories.Contracts;
 using RandomMemories.Domain;
 using RandomMemories.SharedLibrary;
 
@@ -9,10 +10,12 @@ namespace Server.Controllers
     public class PlayerController : ControllerBase
     {
         private readonly IPlayerService _playerService;
+        private readonly IRandomMemoriesDataStorage _storage;
 
-        public PlayerController(IPlayerService playerSvc)
+        public PlayerController(IPlayerService playerSvc, IRandomMemoriesDataStorage storage)
         {
             _playerService = playerSvc;    
+            _storage = storage;
         }
         [HttpGet("{id}")]
         public Player Get([FromRoute] int id)

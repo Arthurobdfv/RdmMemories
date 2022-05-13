@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RandomMemories.Contracts\RandomMemories.Contracts.csproj" />
     <ProjectReference Include="..\RandomMemories.Domain\RandomMemories.Domain.csproj" />
+    <ProjectReference Include="..\RandomMemories.FactoryImplementation\RandomMemories.FactoryImplementation.csproj" />
     <ProjectReference Include="..\RandomMemories.SharedLibrary\RandomMemories.SharedLibrary.csproj" />
   </ItemGroup>
 

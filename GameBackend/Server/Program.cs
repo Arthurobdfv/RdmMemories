@@ -1,4 +1,7 @@
+using RandomMemories.Contracts;
+using RandomMemories.Contracts.Factory;
 using RandomMemories.Domain;
+using RandomMemories.FactoryImplementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IRandomMemoriesDataStorage>(_ => new RandomMemoriesDataStorageFactory().CreateRandomMemoriesDataStorage(String.Empty));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 
