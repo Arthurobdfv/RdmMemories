@@ -1,26 +1,31 @@
-﻿using RandomMemories.Contracts.DataStorage;
+﻿using Newtonsoft.Json;
+using RandomMemories.Contracts.DataStorage;
 
 namespace RandomMemories.LocalImplementation.DataStorageImplementation
 {
     internal class LocalFileDataSet<T> : IDataSet<T> where T : class
     {
         private readonly string _fileName;
-        private readonly string _fullPath;
+        private readonly string _folderPath;
+        private string FullPath => $@"{_folderPath}\{_fileName}";
         public LocalFileDataSet(string fileName)
         {
-            _fileName = fileName;
-            _fullPath = Directory.GetCurrentDirectory();
-            Console.WriteLine($"fileName :{fileName}, fullPathL{_fullPath}");
-
+            _fileName = $"{fileName}.json";
+            _folderPath = $@"{Directory.GetCurrentDirectory()}\LocalDataStorage";
+            Console.WriteLine($"fileName :{fileName}, fullPathL{FullPath}");
+            if(!Directory.Exists(_folderPath))
+                Directory.CreateDirectory(_folderPath);
         }
         public void Add(T item)
         {
-            throw new NotImplementedException();
+            var items = LoadFile();
+            var newitems = items.Append(item);
+            SaveFile(newitems);
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return LoadFile();
         }
 
         public T GetById(object id)
@@ -28,12 +33,22 @@ namespace RandomMemories.LocalImplementation.DataStorageImplementation
             throw new NotImplementedException();
         }
 
-        private void LoadFile()
+        private IEnumerable<T> LoadFile()
         {
-            using (StreamReader r = new StreamReader("file.json"))
+            if (!File.Exists(FullPath))
+                File.Create(FullPath);
+            using (StreamReader r = new StreamReader(FullPath))
             {
-
+                string json = r.ReadToEnd();
+                var items = JsonConvert.DeserializeObject<List<T>>(json) ?? new List<T>();
+                return items;
             }
+        }
+
+        private void SaveFile(IEnumerable<T> itemsToSave)
+        {
+            var data = JsonConvert.SerializeObject(itemsToSave);
+            File.WriteAllText(FullPath, data);
         }
 
     }

@@ -12,7 +12,7 @@ namespace RandomMemories.FactoryImplementation
         }
         public IRandomMemoriesDataStorage CreateRandomMemoriesDataStorage(string imp)
         {
-            return new RandomMemoriesLocalContext();
+            return new RandomMemoriesLocalFileContext();
         }
     }
 }

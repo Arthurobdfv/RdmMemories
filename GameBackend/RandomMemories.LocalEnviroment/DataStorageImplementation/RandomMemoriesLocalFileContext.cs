@@ -4,9 +4,9 @@ using RandomMemories.Contracts.Models;
 
 namespace RandomMemories.LocalImplementation.DataStorageImplementation
 {
-    public class RandomMemoriesLocalContext : IRandomMemoriesDataStorage
+    public class RandomMemoriesLocalFileContext : IRandomMemoriesDataStorage
     {
-        public RandomMemoriesLocalContext()
+        public RandomMemoriesLocalFileContext()
         {
             Players = new LocalFileDataSet<PlayerModel>(nameof(PlayerModel));
         }

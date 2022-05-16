@@ -2,6 +2,7 @@
 using RandomMemories.Contracts;
 using RandomMemories.Domain;
 using RandomMemories.SharedLibrary;
+using RandomMemories.Contracts.Models;
 
 namespace Server.Controllers
 {
@@ -14,7 +15,7 @@ namespace Server.Controllers
 
         public PlayerController(IPlayerService playerSvc, IRandomMemoriesDataStorage storage)
         {
-            _playerService = playerSvc;    
+            _playerService = playerSvc;
             _storage = storage;
         }
         [HttpGet("{id}")]
@@ -28,10 +29,21 @@ namespace Server.Controllers
             };
         }
 
+        [HttpGet]
+        public IEnumerable<PlayerModel> GetAll()
+        {
+            return _storage.Players.GetAll();
+        }
+
         [HttpPost]
         public void Post(Player plr)
         {
-            Console.WriteLine($"Player {plr.PlayerName} has been added to the DB");
+            _storage.Players.Add(new PlayerModel()
+            {
+                Id = plr.Id,
+                Name = plr.PlayerName,
+                Email = String.Empty
+            });
         }
     }
 }
