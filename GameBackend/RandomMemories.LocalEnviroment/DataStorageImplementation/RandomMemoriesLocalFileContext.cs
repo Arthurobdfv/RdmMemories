@@ -8,7 +8,7 @@ namespace RandomMemories.LocalImplementation.DataStorageImplementation
     {
         public RandomMemoriesLocalFileContext()
         {
-            Players = new LocalFileDataSet<PlayerModel>(nameof(PlayerModel));
+            Players = new LocalFileDataSet<PlayerModel>();
         }
         public IDataSet<PlayerModel> Players { get; set; }
     }

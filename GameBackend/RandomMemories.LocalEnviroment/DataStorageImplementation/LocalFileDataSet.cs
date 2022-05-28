@@ -8,11 +8,11 @@ namespace RandomMemories.LocalImplementation.DataStorageImplementation
         private readonly string _fileName;
         private readonly string _folderPath;
         private string FullPath => $@"{_folderPath}\{_fileName}";
-        public LocalFileDataSet(string fileName)
+        public LocalFileDataSet()
         {
-            _fileName = $"{fileName}.json";
+            _fileName = $"{typeof(T).Name}.json";
             _folderPath = $@"{Directory.GetCurrentDirectory()}\LocalDataStorage";
-            Console.WriteLine($"fileName :{fileName}, fullPathL{FullPath}");
+            Console.WriteLine($"fileName :{_fileName}, fullPathL{FullPath}");
             if(!Directory.Exists(_folderPath))
                 Directory.CreateDirectory(_folderPath);
         }

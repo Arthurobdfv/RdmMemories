@@ -1,5 +1,4 @@
 using RandomMemories.Contracts;
-using RandomMemories.Contracts.Factory;
 using RandomMemories.Domain;
 using RandomMemories.FactoryImplementation;
 
